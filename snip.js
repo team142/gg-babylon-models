@@ -21,7 +21,7 @@ var createScene = function () {
         var box = BABYLON.MeshBuilder.CreateBox("box", {height: 0.3, width: 0.6, depth: 0.3}, scene);
         box.position.y = 0.0
         var matGrey = new BABYLON.StandardMaterial("matGrey", scene);
-        matGrey.diffuseColor = new BABYLON.Color3(0.005, 0.005, 0.005);
+        matGrey.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0.5);
         box.material = matGrey
 
         var boxBarrel = BABYLON.MeshBuilder.CreateBox("boxBarrel", {height: 0.05, width: 0.6, depth: 0.05}, scene);
@@ -31,14 +31,20 @@ var createScene = function () {
         matBlack.diffuseColor = new BABYLON.Color3(0, 0, 0);
         boxBarrel.material = matBlack
 
+        var matGreen = new BABYLON.StandardMaterial("matGreen", scene);
+        matGreen.diffuseColor = new BABYLON.Color3(0.2, 1, 0.2);
 
         var boxLeftWing = BABYLON.MeshBuilder.CreateBox("boxLeftWing", {height: 0.1, width: 0.65, depth: 0.05}, scene);
         boxLeftWing.position.y = -0.11
         boxLeftWing.position.z = 0.15
+        boxLeftWing.material = matBlack
+        boxLeftWing.material = matGreen
+
 
         var boxRightWing = BABYLON.MeshBuilder.CreateBox("boxRightWing", {height: 0.1, width: 0.65, depth: 0.05}, scene);
         boxRightWing.position.y = -0.11
         boxRightWing.position.z = -0.15
+        boxRightWing.material = matGreen
 
         box.addChild(boxBarrel)
         box.addChild(boxLeftWing)
